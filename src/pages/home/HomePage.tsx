@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import { SideBar } from '../../component'
+import { NameCard } from '../../component'
 import { ArticleCard } from '../../component'
 import { ArticleCardWrapper, ArticleListWrapper } from './HomePageStyle'
 import { useViewPort } from '../../hook/useViewPort'
@@ -28,7 +28,7 @@ export const HomePage = () => {
   ]
   return (
     <>
-      <SideBar></SideBar>
+      <NameCard></NameCard>
       <ArticleListWrapper>
         <Row>
           <Col span={18} xs={24} lg={18}>
@@ -38,7 +38,7 @@ export const HomePage = () => {
               })}
             </ArticleCardWrapper>
           </Col>
-          {width > 620 && (
+          {width >= 620 && (
             <Col span={6}>
               <div style={{ backgroundColor: 'white' }}>文章列表导航</div>
             </Col>

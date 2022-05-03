@@ -42,34 +42,36 @@ export const Wave = styled.div`
     animation: ${waveAnimation} 3s 1.8s infinite ease-out;
   }
 `
-export const SideBarWrapper = styled.section`
+export const NameCardWrapper = styled.section`
   margin-bottom: 100px;
-  div.wrapped {
-    background-color: white;
-    border-radius: 25px;
-    margin: 0 auto;
-    padding-top: 30px;
-    width: 340px;
-    height: 390px;
-    box-shadow: 1px 3px 10px rgb(153 153 153 / 30%);
-  }
-  div.title {
-    margin-top: 30px;
-  }
-  div.link {
-    display: flex;
-    justify-content: center;
-    .my-media {
-      &:hover {
-        background-color: rgb(235, 235, 235);
-      }
-      cursor: pointer;
-      height: 35px;
-      padding: 8px;
-      border-radius: 8px;
-      margin-left: 15px;
-      /* line-height: 35px; */
-      box-shadow: 1px 3px 10px rgb(153 153 153 / 30%);
-    }
-  }
+  min-width: 340px;
 `
+export const NameCardWrapped = styled.div`
+  background-color: white;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 340px;
+  height: 390px;
+  box-shadow: 1px 3px 10px rgb(153 153 153 / 30%);
+`
+export const NameCardTitle = styled.div`
+  margin-top: 30px;
+`
+export const NameCardLink = styled.div`
+  display: flex;
+  justify-content: center;
+`
+export const NameCardMedia = styled.div`
+  &:hover {
+    background-color: rgb(235, 235, 235);
+  }
+  cursor: pointer;
+  height: 35px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: 15px;
+  /* line-height: 35px; */
+  box-shadow: 1px 3px 10px rgb(153 153 153 / 30%);
+`
+export const NameCardAvator = styled.div``

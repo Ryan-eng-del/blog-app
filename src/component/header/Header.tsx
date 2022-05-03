@@ -1,11 +1,25 @@
-import React from 'react'
-import { Menu, Row, Col } from 'antd'
+import React, { useState } from 'react'
+import { Menu, Row, Col, Drawer } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
 import { items } from './HeaderData'
+import {
+  WebHeaderMenuWrapper,
+  MobileHeaderMenuWrapper,
+  MenuIconWrapper
+} from './HeaderStyle'
 import { useViewPort } from '../../hook/useViewPort'
-/* 响应式 */
-const responsiveMobile = { xxl: 0, xl: 0, lg: 0, sm: 0, xs: 24 }
 export const Header: React.FC = (props) => {
   const { width } = useViewPort()
+  const [visible, setVisible] = useState<boolean>(false)
+  const [placement] = useState<'left'>('left')
+  const showDrawer = () => {
+    setVisible(true)
+  }
+
+  const onClose = () => {
+    setVisible(false)
+  }
+
   const breakPoint = 620
   return (
     <Row
@@ -15,13 +29,7 @@ export const Header: React.FC = (props) => {
       }}
     >
       {width > breakPoint ? (
-        <section
-          style={{
-            borderRadius: '16px',
-            boxShadow: '1px 3px 10px rgb(153 153 153 / 30%)',
-            overflow: 'hidden'
-          }}
-        >
+        <WebHeaderMenuWrapper>
           <Col>
             <Menu
               mode="horizontal"
@@ -29,12 +37,31 @@ export const Header: React.FC = (props) => {
               defaultSelectedKeys={['home']}
             />
           </Col>
-        </section>
+        </WebHeaderMenuWrapper>
       ) : (
-        <Col {...responsiveMobile}>
-          <div style={{ height: 46 }}></div>
+        <Col>
+          <MobileHeaderMenuWrapper>
+            <MenuIconWrapper
+              onClick={() => {
+                showDrawer()
+              }}
+            >
+              <MenuOutlined />
+            </MenuIconWrapper>
+          </MobileHeaderMenuWrapper>
         </Col>
       )}
+      <Drawer
+        title="Drawer with extra actions"
+        placement={placement}
+        width={200}
+        onClose={onClose}
+        visible={visible}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     </Row>
   )
 }

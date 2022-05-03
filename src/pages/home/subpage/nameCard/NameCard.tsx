@@ -1,14 +1,22 @@
 import React from 'react'
 import { Avatar, Typography } from 'antd'
-import { SideBarData } from './SideBarData'
-import { Wave, SideBarWrapper } from './SiderBarStyle'
+import { SideBarData } from './NameCardData'
+import {
+  Wave,
+  NameCardWrapper,
+  NameCardWrapped,
+  NameCardLink,
+  NameCardMedia,
+  NameCardTitle,
+  NameCardAvator
+} from './NameCardStyle'
 const { Title, Paragraph, Text, Link } = Typography
-export const SideBar: React.FC = (props) => {
+export const NameCard: React.FC = (props) => {
   const { avator, title, subTitle, homepages } = SideBarData
   return (
-    <SideBarWrapper>
-      <div className="wrapped">
-        <div className="avator">
+    <NameCardWrapper>
+      <NameCardWrapped className="wrapped">
+        <NameCardAvator>
           <Wave>
             <div className="pointer1"></div>
             <div className="pointer2"></div>
@@ -22,16 +30,16 @@ export const SideBar: React.FC = (props) => {
             shape="circle"
             style={{ position: 'relative', zIndex: 999 }}
           />
-        </div>
+        </NameCardAvator>
 
-        <div className="title">
+        <NameCardTitle>
           <Title level={3}>{title}</Title>
           <Paragraph>{subTitle}</Paragraph>
-        </div>
-        <div className="link">
+        </NameCardTitle>
+        <NameCardLink>
           {Object.entries(homepages).map((item, index) => {
             return (
-              <span key={index} className="my-media">
+              <NameCardMedia key={index}>
                 <span className="page-icon" style={{ margin: 8 }}>
                   {item[1].icon}
                 </span>
@@ -44,11 +52,11 @@ export const SideBar: React.FC = (props) => {
                     {item[1].description}
                   </Text>
                 </Link>
-              </span>
+              </NameCardMedia>
             )
           })}
-        </div>
-      </div>
-    </SideBarWrapper>
+        </NameCardLink>
+      </NameCardWrapped>
+    </NameCardWrapper>
   )
 }
