@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+@import '~highlight.js/styles/atom-one-dark.css';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,4 +14,41 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+:root {
+  --accent-color: #696969; /* nice */
+  --primary-colour: #306797; /* <> */
+  --background-color: white;
+  --border-color: #dbdbdb;
+  --code-bg-color: #f8f8f8;
+  --font-color: #1f1f1f;
+  --codemirror-color: var(--font-color);
+  --header-color: #000000;
+  --link-color: #2077b2;
+  --control-text-color: #667176;
+  --side-bar-bg-color: #fafafa;
+  --hr-color: var(--primary-colour);
+  --body-font: 'Nunito', 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+  --heading-font: 'Roboto Slab', serif;
+  --border-radius: 2px;
+  --document-horizontal-margin: 80px;
+  --document-padding-x: 19ch;
+  --font-size: 16px;
+  --h1-fontsize: 2.7rem;
+  --h2-fontsize: 2.2rem;
+  --h3-fontsize: 1.7rem;
+  --h4-fontsize: 1.4rem;
+  --h5-fontsize: 1.2rem;
+  --h6-fontsize: 1.1rem;
+  --line-height: 1.4;
+  --main-content-margin: 0 auto;
+  --main-content-max-width: 100ch;
+  --monospace-font-size: 15px;
+  --monospace-font: 'FiraCode', 'Inconsolata', 'Consolas', 'Menlo',
+    'Liberation Mono', Courier, monospace;
+  --monospace-line-height: 1.4;
+  --monospace: var(--monospace-font); /* Fixes source code mode */
+  --nav-width: 200px;
+  --vertical-padding: 40px;
 }
