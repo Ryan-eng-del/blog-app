@@ -9,14 +9,13 @@ import { translateMarkdown } from '../../utils/translateMarkdown'
 
 export const ArticleDetail: React.FC = (props) => {
   const [mdContent, setMdContent] = useState('')
-
   const param = useParams()
   const handleMdChange = (mdContent: string) => {
+    console.log(mdContent)
     setMdContent(mdContent)
   }
   return (
     <>
-      <h2>文章详情页面: {param.articleId}</h2>
       <ArticleDetailWrapper>
         <MdStyleWrapper
           id="write"
