@@ -1,3 +1,2 @@
-export * from '../pages/home/subpage/nameCard'
-export * from './articleCard'
-export * from './header'
+export * from './Home/NameCard'
+export * from './ArticleDetail/ArticleCard'

@@ -51,6 +51,7 @@ export const NameCardWrapped = styled.div`
   border-radius: 25px;
   margin: 0 auto;
   padding-top: 30px;
+  text-align: center;
   width: 340px;
   height: 390px;
   box-shadow: 1px 3px 10px rgb(153 153 153 / 30%);

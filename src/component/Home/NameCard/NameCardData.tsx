@@ -1,6 +1,6 @@
 import { GithubOutlined, DeploymentUnitOutlined } from '@ant-design/icons'
 export const SideBarData = {
-  avator: require('../../../../assets/img/avatorPro.jpg'),
+  avator: require('../../../assets/img/avatorPro.jpg'),
   title: '书笙',
   subTitle: '欲买桂花同载酒',
   homepages: {

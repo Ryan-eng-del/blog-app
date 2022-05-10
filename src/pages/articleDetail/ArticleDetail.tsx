@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
 import Editor from 'md-editor-rt'
 import 'md-editor-rt/lib/style.css'
 import 'highlight.js/styles/atom-one-dark.css'
@@ -9,9 +8,7 @@ import { translateMarkdown } from '../../utils/translateMarkdown'
 
 export const ArticleDetail: React.FC = (props) => {
   const [mdContent, setMdContent] = useState('')
-  const param = useParams()
   const handleMdChange = (mdContent: string) => {
-    console.log(mdContent)
     setMdContent(mdContent)
   }
   return (

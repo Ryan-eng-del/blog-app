@@ -15,7 +15,7 @@ export const NameCard: React.FC = (props) => {
   const { avator, title, subTitle, homepages } = SideBarData
   return (
     <NameCardWrapper>
-      <NameCardWrapped className="wrapped">
+      <NameCardWrapped>
         <NameCardAvator>
           <Wave>
             <div className="pointer1"></div>
