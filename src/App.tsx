@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import {
   HomePage,
   AboutPage,
@@ -9,7 +10,6 @@ import {
 } from './pages'
 import { MainLayout } from './layout'
 import './App.css'
-
 function App() {
   return (
     <div className="App">

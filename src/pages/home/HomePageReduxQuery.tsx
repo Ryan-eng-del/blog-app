@@ -1,41 +1,32 @@
-import React from 'react'
+import { Spin } from 'antd'
 import { NameCard } from '../../component'
 import { ArticleCard } from '../../component'
+import { useGetArticleListQuery } from '../../server/testQuery'
 import {
   ArticleCardWrapper,
   ArticleListWrapper,
   ArticleNavWrapper
 } from './HomePageStyle'
-import { useViewPort } from '../../hook/useViewPort'
 export const HomePage = () => {
-  const { width } = useViewPort()
-  console.log(width)
-  const data = [
-    {
-      id: '1',
-      createTime: '2',
-      title: 'Title',
-      summary: 'summary',
-      tag: ['react'],
-      viewCount: 19,
-      comment: 12
-    },
-    {
-      id: '2',
-      createTime: '2',
-      title: 'Title',
-      summary: 'summary',
-      tag: ['react'],
-      viewCount: 19,
-      comment: 12
-    }
-  ]
+  const { data, error, isLoading } = useGetArticleListQuery('articlelist')
+  if (isLoading) {
+    return (
+      <Spin
+        size="large"
+        tip="Loading..."
+        style={{ width: '100%', position: 'absolute', top: '45%' }}
+      />
+    )
+  }
+  if (error) {
+    return <div>请求出现故障</div>
+  }
   return (
     <>
       <NameCard></NameCard>
       <ArticleListWrapper>
         <ArticleCardWrapper>
-          {data.map((item) => {
+          {data?.map((item: any) => {
             return <ArticleCard {...item} key={item.id} />
           })}
         </ArticleCardWrapper>
